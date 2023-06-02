@@ -47,7 +47,7 @@ def eval_model(model: torch.nn.Module,
     return {"model_name" : model.__class__.__name__,
             "model_loss" : loss.item(),
             "model_acc" : acc}
-  def train_step(model: torch.nn.Module, data_loader: torch.utils.data.DataLoader,
+def train_step(model: torch.nn.Module, data_loader: torch.utils.data.DataLoader,
                loss_fn: torch.nn.Module, optimizer: torch.optim.Optimizer,
                accuracy_fn, device: torch.device = device):
   train_loss, train_acc = 0,0
