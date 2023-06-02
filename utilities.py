@@ -71,7 +71,12 @@ def train_step(model: torch.nn.Module, data_loader: torch.utils.data.DataLoader,
   train_loss /= len(data_loader)
   train_acc /= len(data_loader)
   print(f"Train loss: {train_loss:<.5f} | Train accuracy: {train_acc:<.2f}%")
-
+  
+  
+def displayTrainTime(start: float, end: float, device: torch.device=None):
+  total_time = end - start
+  print(f"Train time on {device}: {total_time:.3f} seconds")
+  return total_time
 def test_step(model: torch.nn.Module, data_loader: torch.utils.data.DataLoader,
                loss_fn: torch.nn.Module, accuracy_fn, device: torch.device = device):
   test_loss, test_acc = 0,0
