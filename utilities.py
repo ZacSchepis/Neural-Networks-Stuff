@@ -30,7 +30,7 @@ def accuracy_fn(y_true, y_pred):
     acc = (correct / len(y_pred)) * 100
     return acc
   
-  def eval_model(model: torch.nn.Module,
+def eval_model(model: torch.nn.Module,
                data_loader: torch.utils.data.DataLoader,
                loss_fn: torch.nn.Module,
                acc_fn, device):
